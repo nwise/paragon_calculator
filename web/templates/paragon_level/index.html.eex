@@ -1,0 +1,30 @@
+<h2>Listing paragon levels</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Level</th>
+      <th>Xp per level</th>
+      <th>Xp total</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for paragon_level <- @paragon_levels do %>
+    <tr>
+      <td><%= paragon_level.level %></td>
+      <td><%= paragon_level.xp_per_level %></td>
+      <td><%= paragon_level.xp_total %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: paragon_level_path(@conn, :show, paragon_level), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: paragon_level_path(@conn, :edit, paragon_level), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: paragon_level_path(@conn, :delete, paragon_level), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New paragon level", to: paragon_level_path(@conn, :new) %>

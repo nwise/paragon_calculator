@@ -1,0 +1,6 @@
+<h2>New paragon level</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: paragon_level_path(@conn, :create) %>
+
+<%= link "Back", to: paragon_level_path(@conn, :index) %>

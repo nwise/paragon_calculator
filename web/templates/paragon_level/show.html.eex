@@ -1,0 +1,23 @@
+<h2>Show paragon level</h2>
+
+<ul>
+
+  <li>
+    <strong>Level:</strong>
+    <%= @paragon_level.level %>
+  </li>
+
+  <li>
+    <strong>Xp per level:</strong>
+    <%= @paragon_level.xp_per_level %>
+  </li>
+
+  <li>
+    <strong>Xp total:</strong>
+    <%= @paragon_level.xp_total %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: paragon_level_path(@conn, :edit, @paragon_level) %>
+<%= link "Back", to: paragon_level_path(@conn, :index) %>
